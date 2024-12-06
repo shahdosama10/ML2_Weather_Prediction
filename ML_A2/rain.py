@@ -368,7 +368,7 @@ print("-"*80)
 # Implement Decision Tree
 # =================================================================================================
 
-dt_model_avg = DecisionTreeClassifier(random_state=42)
+dt_model_avg = DecisionTreeClassifier(random_state=42, criterion='entropy')
 
 dt_model_avg.fit(df_features_train_avg, df_targets_train_avg)  #usign averge filled
 
@@ -379,7 +379,7 @@ dt_accuracy_avg , dt_precision_avg , dt_recall_avg = evaluateModels(df_targets_t
 
 print("-"*80)
 
-dt_model_dropped = DecisionTreeClassifier(random_state=42)
+dt_model_dropped = DecisionTreeClassifier(random_state=42, criterion='entropy')
 
 
 dt_model_dropped.fit(df_features_train_dropped, df_targets_train_dropped) # using dropped nulls
